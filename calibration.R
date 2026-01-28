@@ -1,7 +1,7 @@
 source("cal_estimator.R")
 
-sim_fun<-function(Model,method){
-  return(match.fun(paste(Model,"_",method,sep = '')))
+sim_fun <- function(Model, method) {
+  return(match.fun(paste(Model, "_", method, sep = "")))
 }
 
 calculate_CP<-function(true.value, estimated.values, estimated.sd){

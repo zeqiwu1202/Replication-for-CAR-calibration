@@ -27,10 +27,11 @@ source("Model2.R")
 source("Model3.R")
 source("Model4.R")
 source("tables.R")
-source("DML.R")
 RNGkind("L'Ecuyer-CMRG")
 set.seed(0)
-# mc.reset.stream()
+if (!dir.exists("simulation_results")) {
+  dir.create("simulation_results")
+}
 
 run_simulation<- function(Model, n, randomization_method){
 
@@ -139,13 +140,7 @@ for (s in 1:S){
   result_sdim = sdim(data)
   est_sdim[s] = result_sdim[1]
   sd_sdim[s] = result_sdim[2]
-  
-  # result_rflm = cal_rflm(data)
-  # est_cal_rflm[s] = result_rflm[1]
-  # sd_cal_rflm[s] = result_rflm[2]
-  # result_lin = lin_adj(data)
-  # est_lin[s] = result_lin[1]
-  # sd_lin[s] = result_lin[2]
+
   
 }
 
@@ -160,7 +155,7 @@ sd_data_list <- list(sd_cal_rf, sd_cal_nn,sd_cal_rfnn,sd_cal_rflm,
                      sd_DML_rf, sd_DML_nn,
                      sd_lin,sd_sdim)
 names = c("cal_rf", "cal_nn","cal_rfnn","cal_rflin","cal_rf_g","cal_nn_g","cal_lm_EL",
-          "AIPW_rf" , "AIPW_nn","lin","sdim")
+          "AIPW_rf" , "AIPW_nn","AIPW_lin","sdim")
 
 Q1 <- lapply(data_list,  function(x) quantile(x, 0.25))
 Q3 <- lapply(data_list,  function(x) quantile(x, 0.75))
@@ -172,7 +167,7 @@ lower_bound <- min(Q1 - 2 * IQR)
 upper_bound <- max(Q3 + 2 * IQR)
 
 bounds = c(lower_bound,upper_bound)
-file_name = sprintf("20251008_%s_n%s_%s.pdf", Model, n, randomization_method)
+file_name = sprintf("simulation_results/%s_%s_n%s_%s.pdf", format(Sys.Date(), "%Y%m%d"), Model, n, randomization_method)
 pdf(file_name, width = 12, height = 8)
 
 boxplot(data_list, names=names, main = "Comparison of the Methods",
@@ -242,7 +237,7 @@ for (i in 1:num_of_samplesize){
 
 final_df = bind_rows(final_df_list)
 print(final_df, row.names = FALSE)
-file_name = sprintf("20251008_%s.csv", Model)
+file_name = sprintf("simulation_results/%s_%s.csv", format(Sys.Date(), "%Y%m%d"), Model)
 write.csv(final_df, file_name, row.names = FALSE)
 
 
