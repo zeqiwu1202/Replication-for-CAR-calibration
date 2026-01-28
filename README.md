@@ -20,7 +20,7 @@ If you use this repository, please make sure to **cite Tu, Ma, and Liu (2024)** 
 - `cal_estimator.R`: computes the calibration estimator by solving for calibration weights (uses `generate_objective_func.cpp`).
 - `generate_objective_func.cpp`: RcppArmadillo code to build objective matrices used by calibration weight solvers.
 - `vestimator.cpp`: Rcpp code used by the CAR assignment / helper routines.
-- `createFolds_by_strat.R`: stratified fold creation utility.
+- `createFolds_by_strat.R`: creates sample-splitting folds by splitting within each strata × treatment cell, then merging the per-cell folds into final folds.
 - `estimators.R`: estimators adapted from Tu, Ma, and Liu (2024).
 - `tables.R`: true value calculations for the models considered in simulations.
 - `real_data.R`: empirical application using data in `Data/`.
