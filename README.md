@@ -8,7 +8,7 @@ This repository contains an R/Rcpp implementation for simulation studies and emp
 
 Full reference:
 
-Tu, F., Ma, W. & Liu, H. (2024), “A unified framework for covariate adjustment under stratified randomisation”, *Stat* 13(4), e70016.
+>Tu, F., Ma, W., & Liu, H. (2024). A unified framework for covariate adjustment under stratified randomisation. *Stat*, 13(4), e70016.
 
 If you use this repository, please make sure to **cite Tu, Ma, and Liu (2024)** in addition to citing this repository.
 
@@ -23,10 +23,21 @@ If you use this repository, please make sure to **cite Tu, Ma, and Liu (2024)** 
 - `createFolds_by_strat.R`: creates sample-splitting folds by splitting within each strata × treatment cell, then merging the per-cell folds into final folds.
 - `estimators.R`: estimators adapted from Tu, Ma, and Liu (2024).
 - `tables.R`: true value calculations for the models considered in simulations.
-- `real_data.R`: empirical application using data in `Data/`.
-- `Data/`: input datasets for the empirical analysis.
+- `real_data.R`: empirical application using data in `Data/` (see [**Data Sources**](#data-sources) section below).
+- `Data/`: input datasets for the empirical analysis (see [**Data Sources**](#data-sources) section below).
 - `simulation_results/`: simulation outputs (CSV/PDF).
 - `real_data_results/`: empirical outputs (CSV/PDF).
+
+## Data Sources
+
+The datasets in the `Data/` folder are from the replication package of:
+
+> Dupas, P., Karlan, D., Robinson, J., & Ubfal, D. (2018). Banking the Unbanked? Evidence from Three Countries. *American Economic Journal: Applied Economics*, 10(2), 257–297.
+
+The data can be downloaded from the OpenICPSR repository:
+https://www.openicpsr.org/openicpsr/project/116346/version/V1/view
+
+Please cite this paper if you use the data in your research.
 
 ## Requirements
 
