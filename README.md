@@ -1,16 +1,22 @@
-# Replication for CAR Calibration
+# Replication Code for “Integrating Heterogeneous Information in Randomized Experiments: A Unified Calibration Framework”
 
-This repository contains an R/Rcpp implementation for simulation studies and empirical analysis related to the paper entitled **“Integrating Heterogeneous Information in Randomized Experiments: A Unified Calibration Framework”** by Ma, Wu, and Zhang (2026).
+This repository contains an R/Rcpp implementation for simulation studies and empirical analysis related to the paper entitled **“Integrating Heterogeneous Information in Randomized Experiments: A Unified Calibration Framework”** by **Ma, Wu, and Zhang (2026)**.  
+ArXiv preprint: https://arxiv.org/abs/2603.07055
 
 ## Attribution
 
-**Important:** Parts of the implementation in this repository are adapted from code associated with **Tu, Ma, and Liu (2024)**. This repo reorganizes and extends that code for running the simulations/figures in this project.
+**Important:** This repository accompanies:
+
+> Ma, W., Wu, Z., & Zhang, Z. (2026). Integrating heterogeneous information in eandomized experiments: A unified calibration framework. *arXiv preprint arXiv:2603.07055*. 
+
+
+Parts of the implementation in this repository are adapted from code associated with **Tu, Ma, and Liu (2024)**. This repo reorganizes and extends that code for running the simulations/figures in this project.
 
 Full reference:
 
 >Tu, F., Ma, W., & Liu, H. (2024). A unified framework for covariate adjustment under stratified randomisation. *Stat*, 13(4), e70016.
 
-If you use this repository, please make sure to **cite Tu, Ma, and Liu (2024)** in addition to citing this repository.
+If you use this repository, please make sure to **cite both Ma, Wu, and Zhang (2026)** and **Tu, Ma, and Liu (2024)**.
 
 ## Repository structure
 
