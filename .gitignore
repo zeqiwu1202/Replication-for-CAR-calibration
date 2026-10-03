@@ -1,0 +1,19 @@
+# Simulation outputs
+/simulation/results/*
+!/simulation/results/formal_simulation/
+/simulation/results/formal_simulation/*
+!/simulation/results/formal_simulation/summary.csv
+# Empirical outputs
+/empirical/results/*
+!/empirical/results/reproduced/
+/empirical/results/reproduced/*
+!/empirical/results/reproduced/estimates.csv
+# Local archives and session files
+/dist/
+.RData
+.Rhistory
+.Rproj.user/
+.DS_Store
+*.o
+*.so
+*.dll
